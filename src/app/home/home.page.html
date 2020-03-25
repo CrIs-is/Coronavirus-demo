@@ -1,20 +1,31 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true"  class="ion-no-border">
+  <ion-toolbar >
     <ion-title>
-      Blank
+      
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content [fullscreen]="true">
+
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+    <ion-toolbar class="ion-no-border">
+      <ion-title size="large"></ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+  <img src="../../assets/covid.png" alt="">
+
+  <div id="container" class="ion-padding">
+    <strong class="ion-margin">Realiza esta prueba!!</strong>
+    <p>¿Quieres saber que tan alto es tu riesgo de contagio de covid-19? Responde unas cuantas preguntas y enterate</p>
   </div>
+
+  <div class="boton">
+    <ion-button color="danger" routerLink="/pregunta1">Empezar</ion-button>
+  </div>
+  
 </ion-content>
