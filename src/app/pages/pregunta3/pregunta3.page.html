@@ -1,0 +1,21 @@
+<ion-content>
+
+  <div class="ion-padding centrar"  [@lado]="isOpen ? 'open' : 'closed'">
+    <p><strong>Sabia usted que que en las mujeres el cromosoma X y las hormonas femeninas pordrían ejercer un efecto protector contra la infección</strong></p>
+  </div>
+
+  <div class="opciones">
+    <ion-list>
+      <ion-item  [@openClose]="isOpen ? 'open' : 'closed'" lines="none" *ngFor="let respuesta of respuestas;let i = index" (click)="seleccionado(respuesta)" [ngClass]="respuesta.seleccionada ? 'seleccionado': 'noSeleccionado' ">
+        <ion-label>{{respuesta.descripcion}}</ion-label>
+        <!--<ion-icon *ngIf="respuesta.seleccionada" name="checkmark-done-outline" color="success"></ion-icon>-->
+        </ion-item>
+    </ion-list>
+        
+  </div>
+
+  <div class="boton"  [@lado]="isOpen ? 'open' : 'closed'">
+    <ion-button color="danger" (click)="siguiente()">Siguiente</ion-button>
+  </div>
+  
+</ion-content>

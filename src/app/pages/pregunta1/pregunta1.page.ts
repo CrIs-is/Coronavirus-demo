@@ -2,19 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { ResultadosService } from '../../services/resultados.service';
 import { Multiple } from '../../../models/multiple.interface';
 import {Router} from '@angular/router';
+import { anima } from '../../animaciones/animacion';
+
 
 @Component({
   selector: 'app-pregunta1',
   templateUrl: './pregunta1.page.html',
   styleUrls: ['./pregunta1.page.scss'],
+  animations:anima
 })
+
 export class Pregunta1Page implements OnInit {
 
   constructor(public servicio: ResultadosService, public router: Router) { }
-  
-  elegidas = 0;
-  mala = false;
-  resultado = 1;
+  public isOpen = true;
+  public elegidas = 0;
+  public mala = false;
+  public resultado = 1;
 
   // Objetos de tipo respuesta
   respuestas: Multiple [] = [
@@ -58,6 +62,9 @@ export class Pregunta1Page implements OnInit {
   ];
 
   ngOnInit() {
+    setTimeout(()=>{
+      this.isOpen = false;
+    },500)
   }
 
   seleccionado(respuesta: Multiple) {
@@ -71,6 +78,7 @@ export class Pregunta1Page implements OnInit {
   }
 
   siguiente() {
+
     for (const respuesta of this.respuestas) {
       // Si eligío alguna respuesta
       if (respuesta.seleccionada) {
@@ -94,8 +102,16 @@ export class Pregunta1Page implements OnInit {
       this.resultado = 0;
     }
 
+    this.isOpen = true;
+    setTimeout(() => {
+      this.router.navigate(['/pregunta2']);
+      
+    }, 700 );
 
     this.servicio.acomulador += this.resultado;
-    this.router.navigate(['/pregunta2']);
+    
   }
+
+  
 }
+

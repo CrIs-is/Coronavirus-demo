@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>resultado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-item class="ion-margin" lines="none">
+    Riesgo de contagio {{valor}}%
+    
+  </ion-item>
+
+  <ion-item class="ion-margin" lines="none">
+    <ion-progress-bar color="secondary" [value]="incremento"></ion-progress-bar>
+    
+  </ion-item>
+  
+  <ion-item>
+    {{incremento}}<br>
+    {{porcentaje}}
+  </ion-item>
+
+  <h1>Recomendacion que hará Alexandra :)</h1>
+</ion-content>

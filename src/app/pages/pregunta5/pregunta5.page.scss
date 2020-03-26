@@ -36,29 +36,28 @@
     position: relative;
     top: 22%;
   }
-
-.centrar{
+  
+  .centrar{
   text-align: center;
-}
-
-.opciones{
+  }
+  
+  .opciones{
   width: 90%;
   margin: 5px auto;
   position: relative;
   top:10%
-}
-.noSeleccionado{
+  }
+  .noSeleccionado{
   --background: white;
-}
-.seleccionado{
-  color: white;
+  }
+  .seleccionado{
+    color: white;
   font-weight: bold;
   --background: #428bca;
-}
-
-ion-item{
+  }
+  
+  ion-item{
   margin: 7px ;
   border: 1px solid #8c8c8c;
   border-radius: 5px;
-}
-
+  }

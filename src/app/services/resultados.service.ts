@@ -7,5 +7,9 @@ export class ResultadosService {
 
   constructor() { }
 
-   acomulador=0;
+   acomulador = 0;
+
+   porcentaje() {
+    return (this.acomulador * 100 ) / 5;
+   }
 }

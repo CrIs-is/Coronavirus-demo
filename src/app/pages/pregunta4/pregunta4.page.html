@@ -1,6 +1,7 @@
 <ion-content>
+
   <div class="ion-padding" class="centrar" [@lado]="isOpen ? 'open' : 'closed'">
-    <p><strong>¿Cuales son las posibles formas de contagio de coronavirus?</strong></p>
+    <p><strong>¿Cuales son sintomas tempranos del virus?</strong></p>
   </div>
 
   <div class="aviso centrar" [@lado]="isOpen ? 'open' : 'closed'">
@@ -9,14 +10,13 @@
 
   <div class="opciones">
     <ion-list>
-      <ion-item [@openClose]="isOpen ? 'open' : 'closed'"  lines="none" *ngFor="let respuesta of respuestas;let i = index" (click)="seleccionado(respuesta)" [ngClass]="respuesta.seleccionada ? 'seleccionado': 'noSeleccionado' ">
+      <ion-item  [@openClose]="isOpen ? 'open' : 'closed'" lines="none" *ngFor="let respuesta of respuestas;let i = index" (click)="seleccionado(respuesta)" [ngClass]="respuesta.seleccionada ? 'seleccionado': 'noSeleccionado' ">
         <ion-label>{{respuesta.descripcion}}</ion-label>
-       <!-- <ion-icon *ngIf="respuesta.seleccionada" name="checkmark-done-outline" color="success"></ion-icon>-->
+        <!--<ion-icon *ngIf="respuesta.seleccionada" name="checkmark-done-outline" color="success"></ion-icon>-->
         </ion-item>
     </ion-list>
         
   </div>
-  
 
   <div class="boton" [@lado]="isOpen ? 'open' : 'closed'">
     <ion-button color="danger" (click)="siguiente()">Siguiente</ion-button>

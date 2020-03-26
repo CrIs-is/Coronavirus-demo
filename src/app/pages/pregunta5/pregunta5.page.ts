@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ResultadosService } from '../../services/resultados.service';
-import { Router } from '@angular/router';
 import { Multiple } from 'src/models/multiple.interface';
+import { Router } from '@angular/router';
+import { ResultadosService } from 'src/app/services/resultados.service';
 import { anima } from '../../animaciones/animacion';
 
 @Component({
-  selector: 'app-pregunta2',
-  templateUrl: './pregunta2.page.html',
-  styleUrls: ['./pregunta2.page.scss'],
+  selector: 'app-pregunta5',
+  templateUrl: './pregunta5.page.html',
+  styleUrls: ['./pregunta5.page.scss'],
   animations:anima
 })
-export class Pregunta2Page implements OnInit {
+export class Pregunta5Page implements OnInit {
 
   public isOpen = true;
- 
   constructor(public servicio: ResultadosService, public router: Router) { }
 
   ngOnInit() {
@@ -25,29 +24,17 @@ export class Pregunta2Page implements OnInit {
 
   respuestas: Multiple [] = [
     {
-      descripcion: "De acuerdo",
+      descripcion: "Si",
       seleccionada: false,
+      valor: 0,
+      estado: true
+    },
+    {
+      descripcion:"No",
+      seleccionada:false,
       valor: 1,
       estado: true
-    },
-    {
-      descripcion:"Parcialmente deacuerdo",
-      seleccionada:false,
-      valor: 0.75,
-      estado: true
-    },
-    {
-      descripcion:"Parcielmente en desacuerdo",
-      seleccionada:false,
-      valor: 0.5,
-      estado: true
-    },
-    {
-      descripcion:"en desacuerdo",
-      seleccionada:false,
-      valor: 0,
-      estado:false
-    },
+    }
     
   ];
 
@@ -74,13 +61,11 @@ export class Pregunta2Page implements OnInit {
       
       this.isOpen = true;
       setTimeout(()=>{
-        this.router.navigate(['/pregunta3']);
-      }, 700)
-
+        this.router.navigate(['/resultado']);
+       }, 700);
     
-   
+    
   }
 
   }
-
 }
