@@ -8,6 +8,13 @@
   transform: translateY(-50%);
 }
 
+.vertical-center{
+  display: flex;
+  
+  justify-content: center;
+  height: 50%;
+}
+
 #container strong {
   font-size: 20px;
   line-height: 26px;

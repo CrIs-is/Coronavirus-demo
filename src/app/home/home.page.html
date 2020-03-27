@@ -1,31 +1,36 @@
-<ion-header [translucent]="true"  class="ion-no-border">
-  <ion-toolbar >
-    <ion-title>
-      
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
 
-
-
-<ion-content [fullscreen]="true">
-
-  <ion-header collapse="condense">
-    <ion-toolbar class="ion-no-border">
-      <ion-title size="large"></ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-
-  <img src="../../assets/covid.png" alt="">
-
-  <div id="container" class="ion-padding">
-    <strong class="ion-margin">Realiza esta prueba!!</strong>
-    <p>¿Quieres saber que tan alto es tu riesgo de contagio de covid-19? Responde unas cuantas preguntas y enterate</p>
-  </div>
-
-  <div class="boton">
-    <ion-button color="danger" routerLink="/pregunta1">Empezar</ion-button>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        
+        <div class="center" style="padding:15%">
+          <ion-img src="../../assets/covid.png" class="ion-align-self-end"></ion-img>
+        </div>
+      </ion-col>
   
+  
+  
+    </ion-row>
+  
+  
+    <ion-row>
+      <ion-col style="padding:10%">
+        <p>¿Quieres saber que tan alto es tu riesgo de contagio de covid-19?. Responde unas cuantas preguntas y entérate.
+        </p>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col>
+        <div class="boton">
+          <ion-button color="danger" routerLink="/pregunta1">Empezar</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  
+  </ion-grid>
+
+
 </ion-content>
+

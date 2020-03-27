@@ -10,6 +10,6 @@ export class ResultadosService {
    acomulador = 0;
 
    porcentaje() {
-    return (this.acomulador * 100 ) / 5;
+    return (this.acomulador * 100 ) / 11;
    }
 }
