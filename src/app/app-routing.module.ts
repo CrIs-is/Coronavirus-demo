@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home-info', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   {
     path: 'pregunta1',
@@ -27,7 +27,8 @@ const routes: Routes = [
   {
     path: 'pregunta5',
     loadChildren: () => import('./pages/pregunta5/pregunta5.module').then( m => m.Pregunta5PageModule)
-  },  {
+  },
+  {
     path: 'pregunta6',
     loadChildren: () => import('./pregunta6/pregunta6.module').then( m => m.Pregunta6PageModule)
   },
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path: 'pregunta11',
     loadChildren: () => import('./pregunta11/pregunta11.module').then( m => m.Pregunta11PageModule)
+  },
+  {
+    path: 'home-info',
+    loadChildren: () => import('./home-info/home-info.module').then( m => m.HomeInfoPageModule)
   },
 
   
