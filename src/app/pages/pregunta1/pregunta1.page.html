@@ -1,6 +1,6 @@
 <ion-content>
   <div class="ion-padding" class="centrar" [@lado]="isOpen ? 'open' : 'closed'">
-    <p><strong>¿Cuales son las posibles formas de contagio de coronavirus?</strong></p>
+    <p  [@openClose]="isOpen ? 'open' : 'closed'" ><strong>¿Cuales son las posibles formas de contagio de coronavirus?</strong></p>
   </div>
 
   <div class="aviso centrar" [@lado]="isOpen ? 'open' : 'closed'">
@@ -19,7 +19,10 @@
   
 
   <div class="boton" [@lado]="isOpen ? 'open' : 'closed'">
-    <ion-button color="danger" (click)="siguiente()">Siguiente</ion-button>
+    <ion-button color="danger" (click)="siguiente()">Siguiente <ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+    
   </div>
+
+ 
   
 </ion-content>

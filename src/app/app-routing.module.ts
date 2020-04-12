@@ -55,7 +55,11 @@ const routes: Routes = [
   {
     path: 'home-info',
     loadChildren: () => import('./home-info/home-info.module').then( m => m.HomeInfoPageModule)
+  },  {
+    path: 'colombia',
+    loadChildren: () => import('./pages/colombia/colombia.module').then( m => m.ColombiaPageModule)
   },
+
 
   
 ];

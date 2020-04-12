@@ -1,4 +1,4 @@
-import { trigger, style, transition, animate, state} from '@angular/animations';
+import { trigger, style, transition, animate, state, keyframes} from '@angular/animations';
 
 // tslint:disable-next-line: align
 
@@ -35,7 +35,7 @@ export const anima =  [
         animate('1s')
       ]),
       transition('closed => open', [
-        animate('0.5s')
+        animate('1s')
       ]),
     ]),
   ]

@@ -13,6 +13,7 @@ import { anima } from '../../animaciones/animacion';
 export class Pregunta3Page implements OnInit {
 
   public isOpen = true;
+  public resultado =1;
 
   constructor(public servicio: ResultadosService, public router: Router) { }
 
@@ -59,15 +60,14 @@ export class Pregunta3Page implements OnInit {
 
       if (respuesta.seleccionada) {
         this.servicio.acomulador += respuesta.valor;  
-      }
-      
-
-      this.isOpen = true;
-      setTimeout(()=>{
-        this.router.navigate(['/pregunta4']);
-       }, 700);
+      }    
     
   }
+
+  this.isOpen = true;
+  setTimeout(()=>{
+    this.router.navigate(['/pregunta4']);
+   }, 700);
 
   }
 

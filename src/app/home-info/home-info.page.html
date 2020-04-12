@@ -2,9 +2,13 @@
 
   <ion-card  >
     <ion-card-header>
-
-      <ion-card-title>Cifras generales</ion-card-title>
       
+      <ion-item lines="none">
+        <ion-card-title>Información general</ion-card-title>
+        <ion-avatar slot="end">
+          <img id="girar" src="../../assets/virus2.jpg">
+        </ion-avatar>
+      </ion-item>
     </ion-card-header>
   </ion-card>
 
@@ -13,58 +17,80 @@
     <ion-item>
       <ion-spinner name="dots"></ion-spinner>
       <ion-label>    </ion-label>
-      <ion-label>  Cargando cifras </ion-label>
+      <ion-label>  Actualizando información </ion-label>
+      
     </ion-item>
   </ion-card>
 
   <ion-card *ngIf="informaciong != null">
     <ion-item>
-      <ion-icon name="globe" slot="start"></ion-icon>
+      <ion-avatar slot="start">
+        <img src="../../assets/planeta.png">
+      </ion-avatar>
       <ion-label>Cifras globales</ion-label>
     </ion-item>
 
     <ion-item>
-        <ion-label>Total contagiados {{contagiadosg}} </ion-label>
+      <ion-icon slot="start" name="trending-up-sharp" color="success"></ion-icon>
+        <ion-label>Total contagiados  </ion-label>
+        <ion-badge slot="end" color="success">{{contagiadosg}}</ion-badge>
     </ion-item>
 
     <ion-item>
-      <ion-label>Muertes {{muertesg}} </ion-label>
+      <ion-icon color="danger" slot="start" name="skull-sharp"></ion-icon>
+      <ion-label>Muertes  </ion-label>
+      <ion-badge slot="end" color="danger">{{muertesg}}</ion-badge>
     </ion-item>
 
     <ion-item>
-      <ion-label>Recuperados {{recuperadosg}} </ion-label>
+      <ion-icon slot="start" color="primary" name="pulse-sharp"></ion-icon>
+      <ion-label>Recuperados </ion-label>
+      <ion-badge slot="end" color="primary">{{recuperadosg}} </ion-badge>
     </ion-item>
     
-    
+    <ion-item>
+      <ion-icon slot="start" name="information-circle-outline"></ion-icon> 
+      <small>Información actualizada diariamente.</small>      
+  </ion-item>
   
-    <ion-card-content>
-      Información actualizada diariamente.
-    </ion-card-content>
+
+      
+     
   </ion-card>
   
     <ion-card *ngIf="informacion != null" >
-      <ion-item>
-        <ion-icon name="flag" slot="start"></ion-icon>
+      <ion-item >
+        <ion-avatar slot="start">
+          <img src="../../assets/colombia.jpg">
+        </ion-avatar>
         <ion-label>Cifras nacionales</ion-label>
+        
       </ion-item>
     
       <ion-item>
-        <ion-label>Total contagiados {{contagiados}} </ion-label>
+        <ion-icon slot="start" name="trending-up-sharp" color="success"></ion-icon>
+        <ion-label>Total contagiados </ion-label>
+        <ion-badge slot="end" color="success">{{contagiados}}  </ion-badge>
       </ion-item>
     
       <ion-item>
-        <ion-label>Muertes {{muertes}} </ion-label>
+        <ion-icon color="danger" slot="start" name="skull-sharp"></ion-icon>
+        <ion-label>Muertes  </ion-label>
+        <ion-badge slot="end" color="danger">{{muertes}}  </ion-badge>
       </ion-item>
     
       <ion-item>
+        <ion-icon slot="start" color="primary" name="pulse-sharp"></ion-icon>
         <ion-label>Recuperados {{recuperados}} </ion-label>
+        <ion-badge slot="end" color="primary">{{recuperados}}  </ion-badge>
       </ion-item>
     
     
-    
-      <ion-card-content>
-        Información actualizada diariamente.
-      </ion-card-content>
+      <ion-item>
+          <ion-icon slot="start" name="information-circle-outline"></ion-icon> 
+          <small>Información actualizada diariamente.</small>      
+      </ion-item>
+      
     </ion-card>
 
 

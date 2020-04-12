@@ -5,7 +5,7 @@
       <ion-col>
         
         <div class="center" style="padding:15%">
-          <ion-img src="../../assets/covid.png" class="ion-align-self-end"></ion-img>
+          <ion-img id="imgRotar" src="../../assets/virus2.jpg" class="ion-align-self-end"></ion-img>
         </div>
       </ion-col>
   
@@ -24,7 +24,10 @@
     <ion-row>
       <ion-col>
         <div class="boton">
-          <ion-button color="danger" routerLink="/pregunta1">Empezar</ion-button>
+          <ion-button color="danger" routerLink="/pregunta1">
+            Empezar
+            <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          </ion-button>
         </div>
       </ion-col>
     </ion-row>

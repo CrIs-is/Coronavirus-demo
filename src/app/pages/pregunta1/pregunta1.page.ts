@@ -3,6 +3,7 @@ import { ResultadosService } from '../../services/resultados.service';
 import { Multiple } from '../../../models/multiple.interface';
 import {Router} from '@angular/router';
 import { anima } from '../../animaciones/animacion';
+import { Platform, ToastController,AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -13,15 +14,80 @@ import { anima } from '../../animaciones/animacion';
 })
 
 export class Pregunta1Page implements OnInit {
-
-  constructor(public servicio: ResultadosService, public router: Router) { }
+  
+  subscription: any;
   public isOpen = true;
   public elegidas = 0;
   public mala = false;
   public resultado = 1;
 
+  public alerta = false;
+
+  public subscribe: any;
+
+  constructor(public servicio: ResultadosService, 
+    public router: Router, 
+    private platform: Platform, 
+    private toast: ToastController,
+    private alert: AlertController) {
+
+    this.backButton();
+
+    
+     }
+
+   backButton() {
+    this.subscribe = this.platform.backButton.subscribeWithPriority(666666, () => {
+      if (this.constructor.name == "Pregunta1Page"){
+        if(!this.alerta){
+          this.presentAlertConfirm();
+          this.alerta = true;
+        }
+        else{
+          this.alert.dismiss();
+          this.alerta = false;
+        }
+          
+      }
+    }
+  );
+   }
+
+   async presentAlertConfirm() {
+    const alert = await this.alert.create({
+      header: 'Quieres volver al inicio?',
+      message: 'Al volver al inicio tendrás que repetir la prueba!!',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            this.alerta = false;
+          }
+        }, {
+          text: 'Si',
+          handler: () => {
+            this.router.navigate(['/home-info']);
+            this.servicio.acomulador = 0;
+            this.subscribe.unsubscribe();
+            
+          }
+        }
+      ]
+    });
+
+    alert.backdropDismiss = false;
+
+    await alert.present();
+  }
+
+
+  
+
+
   // Objetos de tipo respuesta
-  respuestas: Multiple [] = [
+respuestas: Multiple [] = [
     {
       descripcion: "Contacto con objeto contaminado",
       seleccionada: false,
@@ -59,7 +125,17 @@ export class Pregunta1Page implements OnInit {
       estado:true
 
     }
-  ];
+];
+
+
+
+async presentToast() {
+  const toast = await this.alert.create({
+    message: 'saliendo  crack',
+    
+  });
+  toast.present();
+}
 
   ngOnInit() {
     setTimeout(()=>{
@@ -105,13 +181,12 @@ export class Pregunta1Page implements OnInit {
     this.isOpen = true;
     setTimeout(() => {
       this.router.navigate(['/pregunta2']);
-      
+      this.isOpen = false;
     }, 700 );
 
     this.servicio.acomulador += this.resultado;
     
   }
 
-  
 }
 
