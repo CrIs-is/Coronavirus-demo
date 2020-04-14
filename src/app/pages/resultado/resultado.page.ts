@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ResultadosService } from '../../services/resultados.service';
+import { Router } from '@angular/router';
+import { Platform } from '@ionic/angular';
 
 
 @Component({
@@ -9,9 +11,9 @@ import { ResultadosService } from '../../services/resultados.service';
 })
 export class ResultadoPage implements OnInit {
 
-  constructor(public resultado: ResultadosService) { }
+  constructor(public resultado: ResultadosService, public ruta: Router, public plt: Platform) { }
 
-  color = 'secondary'
+  color = 'danger'
 
   public porcentaje;
   public clase = false;
@@ -30,14 +32,14 @@ export class ResultadoPage implements OnInit {
       'Lo animamos a compartir su conocimiento con los demás y así ayudar a disminuir la curva de contagio.';
 
     } else if (this.valor == 26 || this.valor <= 50){
-      this.color = 'primary';
+      
       this.riesgo = 'RIESGO MEDIO';
       this.recomendaciones = 'Usted presenta un riesgo medio con respecto a la población,' +
         'es posible que siga algunas de las recomendaciones dadas por los expertos, pero no en su totalidad y se expone' +
         'en algunas ocasiones a situaciones de riesgo, lo invitamos a seguir mas las recomendaciones dadas, lávese las manos al menos 5 veces al día, evite los grupos grandes de gente y si presenta alguna enfermedad subyacente, consulte a su medico acerca de medidas adicionales. ';
 
     } else if (this.valor == 51 || this.valor <= 70) {
-      this.color = 'warning';
+      
       this.riesgo = 'RIESGO MEDIO - ALTO';
       this.recomendaciones = 'Usted presenta un riesgo medio-alto con respecto a la población,' +
         'es posible que siga pocas de las recomendaciones dadas por los expertos, se expone ' +
@@ -46,7 +48,7 @@ export class ResultadoPage implements OnInit {
 
 
     } else if (this.valor == 71 || this.valor <= 100) {
-      this.color = 'danger'
+     
       this.riesgo = 'RIESGO ALTO';
       this.recomendaciones = 'Usted presenta un riesgo alto con respecto a a la población, es posible que no siga ni esté correctamente informado acerca de las caracteristicas del virus y las formas de prevención de contagio. Le invitamos a informarse mas y a empezar a seguir las recomendaciones dadas por los expertos,lavese las manos al menos 5 veces al día, si tiene que salir evite el contacto físico con otras personas y si posee enfermedades subyacentes consulte inmediatamente acerca de medidas de prevención adicionales';
 
@@ -68,6 +70,21 @@ export class ResultadoPage implements OnInit {
     for ( let i = 0; i < 0.71; i++) {
         this.incremento += 0.2;
     }
+  }
+  public subscripcion;
+  repetir() {
+    this.subscripcion = this.plt.backButton.subscribe(async ()=>{
+
+    })
+    this.resultado.acomulador = 0;
+    this.ruta.navigate(['/home']);
+  }
+  inicio() {
+   this.subscripcion = this.plt.backButton.subscribe(async ()=>{
+      
+    })
+    this.resultado.acomulador = 0;
+    this.ruta.navigate(['/home-info']);
   }
 }
 

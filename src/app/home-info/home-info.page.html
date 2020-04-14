@@ -6,7 +6,7 @@
       <ion-item lines="none">
         <ion-card-title>Información general</ion-card-title>
         <ion-avatar slot="end">
-          <img id="girar" src="../../assets/virus2.jpg">
+          <img  src="../../assets/virus2.jpg">
         </ion-avatar>
       </ion-item>
     </ion-card-header>
@@ -25,27 +25,27 @@
   <ion-card *ngIf="informaciong != null">
     <ion-item>
       <ion-avatar slot="start">
-        <img src="../../assets/planeta.png">
+        <img id="girar" src="../../assets/planeta.png">
       </ion-avatar>
       <ion-label>Cifras globales</ion-label>
     </ion-item>
 
     <ion-item>
-      <ion-icon slot="start" name="trending-up-sharp" color="success"></ion-icon>
+      <ion-icon slot="start" name="trending-up-sharp" color="danger"></ion-icon>
         <ion-label>Total contagiados  </ion-label>
-        <ion-badge slot="end" color="success">{{contagiadosg}}</ion-badge>
+      {{contagiadosg}}
     </ion-item>
 
     <ion-item>
       <ion-icon color="danger" slot="start" name="skull-sharp"></ion-icon>
       <ion-label>Muertes  </ion-label>
-      <ion-badge slot="end" color="danger">{{muertesg}}</ion-badge>
+      {{muertesg}}
     </ion-item>
 
     <ion-item>
-      <ion-icon slot="start" color="primary" name="pulse-sharp"></ion-icon>
+      <ion-icon slot="start" color="danger" name="pulse-sharp"></ion-icon>
       <ion-label>Recuperados </ion-label>
-      <ion-badge slot="end" color="primary">{{recuperadosg}} </ion-badge>
+      {{recuperadosg}}
     </ion-item>
     
     <ion-item>
@@ -59,7 +59,7 @@
   </ion-card>
   
     <ion-card *ngIf="informacion != null" >
-      <ion-item >
+      <ion-item>
         <ion-avatar slot="start">
           <img src="../../assets/colombia.jpg">
         </ion-avatar>
@@ -68,21 +68,21 @@
       </ion-item>
     
       <ion-item>
-        <ion-icon slot="start" name="trending-up-sharp" color="success"></ion-icon>
+        <ion-icon slot="start" name="trending-up-sharp" color="danger"></ion-icon>
         <ion-label>Total contagiados </ion-label>
-        <ion-badge slot="end" color="success">{{contagiados}}  </ion-badge>
+        {{contagiados}}  
       </ion-item>
     
       <ion-item>
         <ion-icon color="danger" slot="start" name="skull-sharp"></ion-icon>
         <ion-label>Muertes  </ion-label>
-        <ion-badge slot="end" color="danger">{{muertes}}  </ion-badge>
+        {{muertes}}  
       </ion-item>
     
       <ion-item>
-        <ion-icon slot="start" color="primary" name="pulse-sharp"></ion-icon>
-        <ion-label>Recuperados {{recuperados}} </ion-label>
-        <ion-badge slot="end" color="primary">{{recuperados}}  </ion-badge>
+        <ion-icon slot="start" color="danger" name="pulse-sharp"></ion-icon>
+        <ion-label>Recuperados </ion-label>
+       {{recuperados}}  
       </ion-item>
     
     
